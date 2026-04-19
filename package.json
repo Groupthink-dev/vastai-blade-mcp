@@ -1,0 +1,51 @@
+{
+  "name": "vastai-blade-mcp",
+  "version": "0.1.0",
+  "description": "Vast.ai GPU marketplace MCP server — search offers, provision GPU instances, manage bids and billing with token-efficient defaults",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "vastai-blade-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "dev:http": "TRANSPORT=http tsx watch src/index.ts",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.9",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "hono": "^4.7.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.1.0"
+  },
+  "author": "groupthink-dev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/groupthink-dev/vastai-blade-mcp.git"
+  },
+  "homepage": "https://github.com/groupthink-dev/vastai-blade-mcp",
+  "keywords": [
+    "mcp",
+    "vast-ai",
+    "gpu",
+    "marketplace",
+    "cloud",
+    "model-context-protocol"
+  ]
+}
