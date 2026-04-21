@@ -1,0 +1,65 @@
+name: vastai-blade-mcp
+version: "0.1.1"
+description: "Vast.ai GPU marketplace MCP — search offers, provision instances, manage SSH keys, billing"
+author: groupthink-dev
+licence: MIT
+tier: certified
+author_type: first-party
+readiness: beta
+contract: virtualmachine-v1
+
+services:
+  vm:
+    list: vastai_instance_list
+    get: vastai_instance_get
+    create: vastai_instance_create
+    delete: vastai_instance_delete
+    start: vastai_instance_start
+    stop: vastai_instance_stop
+    reboot: vastai_instance_reboot
+  offers:
+    search: vastai_search_offers
+    templates: vastai_search_templates
+  instances:
+    logs: vastai_instance_logs
+    label: vastai_instance_label
+    change_bid: vastai_instance_change_bid
+  ssh_keys:
+    list: vastai_ssh_key_list
+    create: vastai_ssh_key_create
+  billing:
+    account: vastai_account_info
+    invoices: vastai_billing_invoices
+
+setup:
+  icon: "🖥️"
+  blurb: "Vast.ai GPU marketplace — search offers, provision GPU instances, manage billing"
+  auth_model: api_key
+  complexity: simple
+
+install:
+  runtime: node
+  package: vastai-blade-mcp
+  command: vastai-blade-mcp
+
+env:
+  - name: VASTAI_API_KEY
+    secret: true
+    required: true
+    description: "Vast.ai API key"
+  - name: VASTAI_WRITE_ENABLED
+    secret: false
+    required: false
+    description: "Set to 'true' to enable write operations (create, delete, start, stop)"
+  - name: TRANSPORT
+    secret: false
+    required: false
+    description: "stdio (default) or http"
+  - name: MCP_API_TOKEN
+    secret: true
+    required: false
+    description: "Bearer token for HTTP transport auth"
+
+conformance:
+  required: "10/12"
+  last_tested: "2026-04-21"
