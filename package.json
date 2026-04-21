@@ -1,6 +1,6 @@
 {
   "name": "vastai-blade-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vast.ai GPU marketplace MCP server — search offers, provision GPU instances, manage bids and billing with token-efficient defaults",
   "type": "module",
   "main": "dist/index.js",
