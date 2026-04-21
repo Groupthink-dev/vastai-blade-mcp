@@ -36,6 +36,21 @@ setup:
   blurb: "Vast.ai GPU marketplace — search offers, provision GPU instances, manage billing"
   auth_model: api_key
   complexity: simple
+  links:
+    - label: "Get API Key"
+      url: "https://cloud.vast.ai/account/"
+  fields:
+    - key: VASTAI_API_KEY
+      label: "API Key"
+      secret: true
+      required: true
+      placeholder: "Your Vast.ai API key"
+      help: "Create at cloud.vast.ai → Account → API Key"
+    - key: VASTAI_WRITE_ENABLED
+      label: "Enable write operations"
+      type: boolean
+      required: false
+      help: "Create, delete, start, and stop GPU instances"
 
 install:
   runtime: node
@@ -51,14 +66,6 @@ env:
     secret: false
     required: false
     description: "Set to 'true' to enable write operations (create, delete, start, stop)"
-  - name: TRANSPORT
-    secret: false
-    required: false
-    description: "stdio (default) or http"
-  - name: MCP_API_TOKEN
-    secret: true
-    required: false
-    description: "Bearer token for HTTP transport auth"
 
 conformance:
   required: "10/12"
