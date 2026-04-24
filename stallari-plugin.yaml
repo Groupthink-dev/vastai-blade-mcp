@@ -2,7 +2,7 @@ name: vastai-blade-mcp
 version: "0.1.1"
 description: "Vast.ai GPU marketplace MCP — search offers, provision instances, manage SSH keys, billing"
 author: groupthink-dev
-licence: MIT
+license: MIT
 tier: certified
 author_type: first-party
 readiness: beta
