@@ -2,25 +2,25 @@
 
 A GPU marketplace MCP server for Vast.ai. 16 tools for searching GPU offers, provisioning instances, managing bids, and billing — with token-efficient defaults and dual safety gates on every write operation.
 
-Implements the [`virtualmachine-v1`](https://github.com/groupthink-dev/stallari-pack-spec) service contract.
+Implements the [`virtualisation-v1`](https://github.com/Groupthink-dev/stallari-pack-spec) service contract.
 
 ## Why Blade MCP?
 
-The `-blade-mcp` suffix identifies this as part of the [Blade MCP](https://github.com/groupthink-dev) family — purpose-built MCP servers with:
+The `-blade-mcp` suffix identifies this as part of the [Blade MCP](https://github.com/Groupthink-dev) family — purpose-built MCP servers with:
 
-- **Service contracts** — implements `virtualmachine-v1` so agentic platforms can swap between GPU providers (Vultr, Vast.ai, RunPod) without rewriting prompts.
+- **Service contracts** — implements `virtualisation-v1` so agentic platforms can swap between GPU providers (Vultr, Vast.ai, RunPod) without rewriting prompts.
 - **Token efficiency** — formatters strip ~60% of raw API response. An offer summary shows GPU model, VRAM, price/hr, and reliability — not 50+ fields of metadata.
 - **Dual write gates** — environment variable + per-call confirmation on all destructive operations. Accepting GPU offers incurs charges immediately; accidental invocations are expensive.
 - **Dual transport** — stdio for local use, Streamable HTTP for remote and always-on deployment.
 
-Other blades: [vultr-blade-mcp](https://github.com/groupthink-dev/vultr-blade-mcp) (50 tools), [cloudflare-blade-mcp](https://github.com/groupthink-dev/cloudflare-blade-mcp) (53 tools), [fastmail-blade-mcp](https://github.com/groupthink-dev/fastmail-blade-mcp) (20 tools), and more.
+Other blades: [vultr-blade-mcp](https://github.com/Groupthink-dev/vultr-blade-mcp) (50 tools), [cloudflare-blade-mcp](https://github.com/Groupthink-dev/cloudflare-blade-mcp) (53 tools), [fastmail-blade-mcp](https://github.com/Groupthink-dev/fastmail-blade-mcp) (20 tools), and more.
 
 ## Quick Start
 
 ### Install
 
 ```bash
-git clone https://github.com/groupthink-dev/vastai-blade-mcp.git
+git clone https://github.com/Groupthink-dev/vastai-blade-mcp.git
 cd vastai-blade-mcp
 npm install && npm run build
 ```
