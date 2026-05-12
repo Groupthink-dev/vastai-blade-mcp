@@ -74,6 +74,8 @@ env:
 requires:
   stallari: ">=0.73.4"
 
+  adapter_contracts:
+    - "virtualisation >= 1.0"
 conformance:
   virtualisation-v1:
     required: untested
