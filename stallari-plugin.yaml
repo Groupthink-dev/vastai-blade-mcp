@@ -13,6 +13,18 @@ homepage: https://github.com/Groupthink-dev/vastai-blade-mcp
 contract: virtualisation-v1
 
 services:
+  # Canonical virtualisation-v1 axis (added for DD-276 B.5a / gh#1).
+  # Maps the contract's Required ops to existing vastai_instance_* tools.
+  # Vast.ai is a GPU marketplace; host_info is not supported because the
+  # scheduled host node is abstracted behind the rental contract.
+  # workload_status is synthesised by the adapter transform from
+  # vastai_instance_get (actual_status preferred, then status).
+  virtualisation:
+    workload_list: vastai_instance_list
+    workload_get: vastai_instance_get
+    workload_status: vastai_instance_get
+
+  # Existing vendor-native axes remain below.
   vm:
     list: vastai_instance_list
     get: vastai_instance_get
